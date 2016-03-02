@@ -61,6 +61,10 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+
+Packages
+.build
+
 ### https://raw.github.com/github/gitignore/1c70d149b55cd81ddfc326040286f85cd07b361d/Global/JetBrains.gitignore
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -110,3 +114,5 @@ fabric.properties
 
 
 .idea
+
+main.swift

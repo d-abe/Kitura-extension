@@ -286,4 +286,7 @@ public class RouterGroup {
         return router.use(self.path+path, middleware: middleware)
     }
 
+    public func group(path: String) -> RouterGroup {
+        return RouterGroup(path: self.path+path, router: router)
+    }
 }

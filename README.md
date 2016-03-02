@@ -16,13 +16,39 @@ import KituraNet
 
 let router : Router = Router()
 
-let group = router.group("/1.0")
+let v1 = router.group("/1.0")
+
+
+let user = v1.group("/user")
 
 // register
-group.get("/user/register") {
+user.get("/register") {
     request, response, next in
 
-    try! response.status(HttpStatusCode.OK).end("test")
+    response.status(HttpStatusCode.OK).send("register")
+
+    next()
+}
+
+// login
+user.get("/login") {
+    request, response, next in
+
+    response.status(HttpStatusCode.OK).send("login")
+
+    next()
+}
+
+
+let article = v1.group("/article")
+
+// list
+article.get("/list") {
+    request, response, next in
+
+    response.status(HttpStatusCode.OK).send("article_list")
+
+    next()
 }
 
 

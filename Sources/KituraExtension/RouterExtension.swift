@@ -13,7 +13,7 @@ extension RouterRequest {
     ///
     /// set User info
     ///
-    public func set(key: String, value: AnyObject) {
+    public func set(key: String, _ value: AnyObject) {
         userInfo[key] = value
     }
 

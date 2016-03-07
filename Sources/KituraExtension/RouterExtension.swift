@@ -1,20 +1,21 @@
 import KituraRouter
 import KituraNet
+import Foundation
 
 extension RouterRequest {
 
     ///
     /// get User info
     ///
-    public func get(key: String) -> AnyObject? {
-        return userInfo[key]
+    public func get(key: String) -> String? {
+        return (self.userInfo[key] as? NSString)?.substringFromIndex(0)
     }
 
     ///
     /// set User info
     ///
-    public func set(key: String, _ value: AnyObject) {
-        userInfo[key] = value
+    public func set(key: String, _ value: String) {
+        self.userInfo[key] = NSString(string: value)
     }
 
 }

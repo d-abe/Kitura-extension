@@ -2,8 +2,6 @@
 
 This package is extension of [Kitura web framework](https://github.com/IBM-Swift/Kitura)
 
-Now, only RouterGroup is available.
-
 ## RouterGroup
 
 Here is a sample code.
@@ -60,3 +58,27 @@ You can access `register`, via `http://localhost:8090/1.0/user/register`
 
 It just only define prefix path, but readability is better.
 
+## HttpClient
+
+It's very very simple HttpClient class using Kitura-net
+
+### usage
+
+```swift
+HttpClient("http://localhost:8090/user/login")
+  .header("Content-Type", "application/json")
+  .header("X-MYHEADER", "hogehoge")
+  .post([
+      "login_id": "sample@example.com",
+      "password": "hogehoge"
+    ], {
+    response in
+
+    if let str = try! response!.readString() {
+        print(str)
+    }
+    else {
+        print("not data")
+    }
+})
+```
